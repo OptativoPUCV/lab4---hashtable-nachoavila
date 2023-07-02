@@ -139,3 +139,18 @@ Sun 02 Jul 2023 12:51:21 AM UTC:
  tests:  11|2
 total_score: 50/70
 0fa24e2
+Sun 02 Jul 2023 12:58:53 AM UTC: 
+ hashmap.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:141:10: error: ‘current’ undeclared (first use in this function)
+  141 |   return current;
+      |          ^~~~~~~
+hashmap.c:141:10: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:142:1: error: control reaches end of non-void function [-Werror=return-type]
+  142 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+19a2335
