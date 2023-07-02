@@ -45,15 +45,15 @@ void insertMap(HashMap * map, char * key, void * value) {
 
   while(1)
   {
-    Pair * current = map->buckets[first];
+    Pair * current = map->buckets[k];
     if(current == NULL || current->key == NULL)
     {
       Pair * newPair = (Pair*)malloc(sizeof(Pair));
       newPair->key = strdup(key);
       newPair->value = value;
       map->size++;
-      map->buckets[first] = newPair;
-      map->current = first;
+      map->buckets[k] = newPair;
+      map->current = k;
       return;
     }
 
