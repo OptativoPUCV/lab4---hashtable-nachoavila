@@ -110,3 +110,14 @@ hashmap.c:103:8: error: suggest parentheses around assignment used as truth valu
 cc1: all warnings being treated as errors
 Compilation failed
 2a39777
+Sun 02 Jul 2023 12:46:16 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:103:8: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  103 |     if(k = first) return NULL;
+      |        ^
+cc1: all warnings being treated as errors
+Compilation failed
+3ba8fc0

@@ -93,7 +93,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     Pair * current = map->buckets[k];  
     if(current == NULL) return NULL;
 
-    if(strcmp(current->key, k) == 0)
+    if(strcmp(current->key, key) == 0)
     {
       map->current = k;
       return current;
