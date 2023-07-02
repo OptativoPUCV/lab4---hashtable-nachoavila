@@ -89,3 +89,24 @@ hashmap.c:103:8: error: suggest parentheses around assignment used as truth valu
 cc1: all warnings being treated as errors
 Compilation failed
 7725010
+Sun 02 Jul 2023 12:46:04 AM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:96:29: error: passing argument 2 of ‘strcmp’ makes pointer from integer without a cast [-Werror=int-conversion]
+   96 |     if(strcmp(current->key, k) == 0)
+      |                             ^
+      |                             |
+      |                             long int
+In file included from test.c:3:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/string.h:140:50: note: expected ‘const char *’ but argument is of type ‘long int’
+  140 | extern int strcmp (const char *__s1, const char *__s2)
+      |                                      ~~~~~~~~~~~~^~~~
+In file included from test.c:4:
+hashmap.c:103:8: error: suggest parentheses around assignment used as truth value [-Werror=parentheses]
+  103 |     if(k = first) return NULL;
+      |        ^
+cc1: all warnings being treated as errors
+Compilation failed
+2a39777
