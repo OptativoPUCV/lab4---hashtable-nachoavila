@@ -128,10 +128,11 @@ Pair * searchMap(HashMap * map,  char * key) {
 Pair * firstMap(HashMap * map) {
   long k = 0;
   long first = k;
-
+  Pair * current = map->buckets[k];
+  
   while(1)
   {
-    Pair * current = map->buckets[k];
+    current = map->buckets[k];
     if(current != NULL && current->key != NULL) break;
     k = (k + 1) % map->capacity;
     if(k == first) return NULL;
