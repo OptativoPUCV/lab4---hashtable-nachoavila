@@ -100,7 +100,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     }
 
     k = (k + 1) % map->capacity;
-    if(k = first) return NULL;
+    if(k == first) return NULL;
   }  
   
   return NULL;
