@@ -57,7 +57,7 @@ void insertMap(HashMap * map, char * key, void * value) {
       return;
     }
 
-    first = (first + 1) % map->capacity;
+    k = (k + 1) % map->capacity;
     if(k == first) return;
   }
 
@@ -85,9 +85,25 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
+  long k = hash(key, map->capacity);
+  long first = k;
 
+  while(1)
+  {
+    Pair * current = map->buckest[k];  
+    if(current == NULL) return NULL;
 
-    return NULL;
+    if(strcmp(current->key, k) == 0)
+    {
+      map->current = k;
+      return current;
+    }
+
+    k = (k + 1) % map->capacity;
+    if(k = first) return NULL;
+  }  
+  
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
